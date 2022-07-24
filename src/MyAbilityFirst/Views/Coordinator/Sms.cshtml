@@ -1,0 +1,48 @@
+﻿@model MyAbilityFirst.Models.SMSViewModel
+@{
+	ViewBag.Title = "Sms";
+}
+
+<div class="container-fluid">
+	<div class="navbar-left">
+		@Html.Partial("_LeftSideMenu")
+	</div>
+	<div class="main-content-wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				@using (Html.BeginForm())
+			{
+			@Html.AntiForgeryToken()
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+					<h2>Send message to a mobile phone</h2>
+					@Html.HiddenFor(model => model.ID)
+					<div class="card card-solid form-horizontal">
+
+						<hr>
+						<div class="form-group">
+							@Html.LabelFor(model => model.MobileNumber, htmlAttributes: new { @class = "control-label col-md-3" })
+							<div class="col-md-9">
+								@Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "0123456789" } })
+								@Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+							</div>
+						</div>
+						<div class="form-group">
+							@Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-3" })
+							<div class="col-md-9">
+								@Html.TextAreaFor(model => model.Content, new { @class = "form-control", @rows = "4", @placeholder = "write message here .." })
+								@Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<hr />
+						<div>
+							<input type="submit" value="Send" class="btn btn-primary" />
+
+						</div>
+					</div>
+			}
+			</div>
+		</div>
+	</div>
+</div>

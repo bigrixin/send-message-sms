@@ -1,0 +1,15 @@
+﻿
+@{
+	ViewBag.Title = "Co-ordinator View";
+}
+<br />
+<div class="nav nav-sidebar">
+	@Html.ActionLink(" My Profile", "MyAccount", "Coordinator", routeValues: null, htmlAttributes: new { title = "Update Profile", @class = "btn btn-block btn-default btn-lg fa fa-user" })
+	@Html.ActionLink(" Review Care Worker ", "ReviewCareWorkers", "Coordinator", routeValues: null, htmlAttributes: new { title = "Review Care Worker", @class = "btn btn-block btn-default btn-lg fa fa-users" })
+	@Html.ActionLink(" Jobs Status Alert", "JobStatus", "Coordinator", routeValues: null, htmlAttributes: new { title = "Jobs Status Alert", @class = "btn btn-block btn-default btn-lg fa fa-calendar " })
+	@Html.ActionLink(" Review Rating ", "ReviewRatings", "Coordinator", null, htmlAttributes: new { title = "Review Rating", @class = "btn btn-block btn-default btn-lg fa fa-star" })
+	@Html.ActionLink(" Rearrange a Care Worker", "RearrangeCareWorker", "Coordinator", routeValues: null, htmlAttributes: new { title = "Rearrange a Care Worker", @class = "btn btn-block btn-default btn-lg fa fa-search" })
+	@Html.ActionLink(" Send Message to Mobile", "Sms", "Coordinator", routeValues: null, htmlAttributes: new { title = "Send message to mobile phone", @class = "btn btn-block btn-default btn-lg fa fa-comment-o" })
+</div>
+
+
